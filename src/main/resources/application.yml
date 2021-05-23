@@ -1,0 +1,7 @@
+# 这里为了简单只有一个数据源, 没有写redis的配置, 使用springboot自动加载
+spring:
+  redis:
+    host: yourHost
+    port: 6379
+    password: password
+    database: 0
