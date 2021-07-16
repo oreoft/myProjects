@@ -19,7 +19,7 @@ public class LinkedMain {
 
 
     public static void main(String[] args) {
-        System.out.println(LinkedSeries.mergeTwoLists(l1, l2));
+        System.out.println(LinkedSeries.mergeTwoListsRecursion(l1, l2));
     }
 
 }
