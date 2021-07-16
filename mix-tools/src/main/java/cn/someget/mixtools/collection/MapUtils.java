@@ -32,7 +32,7 @@ public class MapUtils {
 
 
     /**
-     * 因为stram的distinct去重不能根据key来去重, 只能比较元素整体是不是相同, 这个可以方法可以根据里面具体的key来去重
+     * 因为Stream的distinct去重不能根据key来去重, 只能比较元素整体是不是相同, 这个可以方法可以根据里面具体的key来去重
      * @param keyExtractor
      * @param <T>
      * @return

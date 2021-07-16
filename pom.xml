@@ -13,6 +13,7 @@
     <modules>
         <module>redis-expire</module>
         <module>mix-tools</module>
+        <module>oj</module>
     </modules>
 
     <groupId>cn.someget</groupId>
