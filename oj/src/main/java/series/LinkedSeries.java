@@ -77,6 +77,33 @@ public class LinkedSeries {
     }
 
 
+    /**
+     *  查找两个链表的第一个公共节点
+     * 注意要理解什么是公共节点，并不是两个节点的值相同就是公共节点。
+     * 而是在第一链表和第二链表中都存在一个节点，该节点往后的子链表在两个链表中是相同的。
+     * @param l1 链表1
+     * @param l2 链表2
+     * @return 一个公共结点
+     */
+    public ListNode getIntersectionNode(ListNode l1, ListNode l2) {
+        // 因为寻找公共结点, 如果一方为空, 则不用判断了
+        if (l1 == null || l2 == null) {
+            return null;
+        }
+        // 初始化临时的头指针
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+
+        // 两个指针不断地向后遍历, 直至找到相交点, 只有双方都为null或者到了公共结点才会跳出
+        while (p1 != p2) {
+            // p1刚开始在自己的表上, 当走到尾部则进行换表(注意换对方原来的表, 从第一个结点开始), 同理p2也会换过来, 每次步幅+1
+            p1 = p1 == null ? l2 : p1.next;
+            p2 = p2 == null ? l1 : p2.next;
+        }
+        return p1;
+    }
+
+
 
 
 
