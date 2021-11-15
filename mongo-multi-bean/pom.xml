@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>cn.someget.redis</groupId>
-    <artifactId>redis-multi-bean</artifactId>
+    <groupId>cn.someget.mongo</groupId>
+    <artifactId>mongo-multi-bean</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>redis-multi-bean</name>
-    <description>引入redis并且配置多数据源</description>
+    <name>mongo-multi-bean</name>
+    <description>引入mongodb并且配置多数据源</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -25,21 +25,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!-- 导入springData-redis -->
+        <!-- 导入springData-mongodb -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-        <!-- 里面包含jackson依赖, 顺便一起导入, 如果单独封装建议单独导入jackson -->
+        <!-- 导入web, 项目会启动tomcat, 不会自动结束, 方便你们测试  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
-            <scope>provided</scope>
         </dependency>
         <!-- 加了这个读配置会高亮 -->
         <dependency>
@@ -48,11 +42,11 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-            <version>2.6.2</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
         </dependency>
-        <!--  -->
     </dependencies>
 
     <build>

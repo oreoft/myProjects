@@ -1,0 +1,25 @@
+# 开启mongodb执行语句打印(警告!!! 这一行建议只在dev/test配置文件中加)
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+
+spring:
+  # mongodb的配置
+  data:
+    mongodb:
+      # 小驼峰转下划线
+      field-naming-strategy: org.springframework.data.mapping.model.SnakeCaseFieldNamingStrategy
+      # 如果有多个,在这里加配置, 然后多实现一个config的类
+      primary:
+        database: yourDatabase
+        host: yourHost
+        port: 27001
+        username: yourName
+        password: yourPassword
+      secondary:
+        database: yourDatabase
+        host: yourHost
+        port: 27001
+        username: yourName
+        password: yourPassword
