@@ -4,7 +4,7 @@
 
     <groupId>cn.somget.tools</groupId>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>my-projects</artifactId>
+    <artifactId>project-store</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>my-projects</name>
     <description>这只是一个文件夹做聚合作用, 里面模块没有半毛线继承关系</description>
