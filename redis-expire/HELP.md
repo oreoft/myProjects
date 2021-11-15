@@ -1,14 +1,16 @@
-## redis服务端修改
+# Getting Started
+
+### Introduction
+这个项目是redis的过期回调,一个小demo
+
+## redis也需要进行配置修改
 1. vim 你redis安装目录/redis.conf
 ```json 
 vim /usr/local/redis-6.0.10/redis.conf
 ```
-2. 搜索notify-keyspace-events
-```json
-/notify-keyspace-even
-```
+2. 搜索`notify-keyspace-events` `/notify-keyspace-even`
 ![图](https://mypicgogo.oss-cn-hangzhou.aliyuncs.com/tuchuang20210523102640.png)
-   
+
 3. 添加notify-keyspace-events Ex(如果注释了,把注释放开)
    这个Ex,后面的x代表的是监听事件, 我们只需要过期时间, 所以放一个x
    K：keyspace事件，事件以__keyspace@<db>__为前缀进行发布；         
@@ -24,6 +26,6 @@ vim /usr/local/redis-6.0.10/redis.conf
    A：g$lshzxe的别名，因此”AKE”意味着所有事件。
 
 
-## 参考
+## Reference Documentation
 1. [与Redis进行消息传递](https://spring.io/guides/gs/messaging-redis/)
 2. [Redis键空间通知](https://redis.io/topics/notifications)

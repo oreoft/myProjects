@@ -1,4 +1,4 @@
-package cn.someget.redisexpire.redisConfig;
+package cn.someget.redisexpire.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,9 +7,9 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 
 /**
- * @author zyf
+ * 创建监听容器
+ * @author oreoft
  * @date 2021-05-23 09:05
- * @describe : 创建监听容器
  */
 @Configuration
 public class RedisListenerConfig {

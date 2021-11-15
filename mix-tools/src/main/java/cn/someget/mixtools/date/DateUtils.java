@@ -11,20 +11,18 @@ import java.util.Optional;
 import static cn.someget.mixtools.date.DateConstant.ONE_HOUR_SECOND_COUNT;
 
 /**
- * @author zyf
+ * 有关日期相关的工具类
+ * @author oreoft
  * @date 2021-05-26 10:05
- * @describe :
  */
 public class DateUtils {
 
-
-
     /**
      *  返回当前距离传日整点数的秒数(0-23)
+     *<p>想要设置每日凌晨三点过期, 传入3
+     *   如果今天没到凌晨三点就返回距离今天凌晨三点的值, 如果凌晨三点已过则返回明天的三点的
      * @param time 整点数
      * @return 当前距离给定time的时间差(单位秒)
-     * @example 想要设置每日凌晨三点过期, 传入3
-     *          如果今天没到凌晨三点就返回距离今天凌晨三点的值, 如果凌晨三点已过则返回明天的三点的
      */
     public static long getToNextDaySec(Integer time) {
         LocalDateTime now = LocalDateTime.now();

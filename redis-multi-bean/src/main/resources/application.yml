@@ -1,0 +1,30 @@
+# 假设场景就是有两个redis实例(两个实例都只使用0库和10库)
+    # golang库-只能golang写但是java可以读
+    # java库-只能有java写但是golang服务可读
+# redis的连接配置, 其中redis是通用连接池配置,
+# redis0库下面可以写多个数据源
+# redis10库下面也可以写多数据源
+
+spring:
+  # 线程池数据定义成通用, 如果不同库需要分开, 可以自己改
+  redis:
+    port: 6379
+    max-active: 500
+    max-wait: 1000
+    max-idle: 100
+    min-idle: 10
+    timeout: 1000
+  # 0库的配置(默认)
+  redis0:
+    database: 0
+    host-java: yourHost
+    password-java: yourPassword
+    host-golang: yourHost
+    password-golang: yourPassword
+  # 10库的配置
+  redis10:
+    database: 10
+    host-java: ${spring.redis0.host-java}
+    password-java: ${spring.redis0.password-java}
+    host-golang: ${spring.redis0.host-golang}
+    password-golang: ${spring.redis0.password-golang}

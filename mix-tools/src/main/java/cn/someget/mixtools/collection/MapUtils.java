@@ -13,32 +13,21 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
- * @author zyf
+ * map相关的工具类
+ * @author oreoft
  * @date 2021-05-26 10:05
- * @describe :
  */
 public class MapUtils {
 
-
-    @Test
-    public void distinctByKeyTest() {
-        List<Map<Object, Object>> list = Lists.newArrayList(
-                MapUtil.builder().put("name", "xiaoming").build(),
-                MapUtil.builder().put("name", "xiaohong").build(),
-                MapUtil.builder().put("name", "xiaoming").build());
-        System.out.println(list.stream().filter(distinctByKey(e -> e.get("name"))).collect(Collectors.toList()));
-
-    }
-
-
     /**
-     * 因为Stream的distinct去重不能根据key来去重, 只能比较元素整体是不是相同, 这个可以方法可以根据里面具体的key来去重
-     * @param keyExtractor
-     * @param <T>
-     * @return
+     * 这个可以方法可以根据里面具体的key来去重
+     * 因为Stream的distinct去重不能根据key来去重, 只能比较元素整体是不是相同
+     * @param mapping 转换
+     * @param <T> 传入一个func, 获取要去重的key
+     * @return 返回一个断言,表示这个是不是重复
      */
-    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) {
+    public static <T> Predicate<T> distinctByKey(Function<? super T, Object> mapping) {
         Map<Object, Boolean> seen = new ConcurrentHashMap<>();
-        return object -> seen.putIfAbsent(keyExtractor.apply(object), Boolean.TRUE) == null;
+        return object -> seen.putIfAbsent(mapping.apply(object), Boolean.TRUE) == null;
     }
 }
