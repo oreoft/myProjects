@@ -30,7 +30,13 @@ public class DateUtils {
         // 如果当前时间小于某点, 则返回当前时间到今天某点的秒差值
         if (now.getHour() < time) {
             DateUtil.endOfDay(new Date()).
-                    between(Date.from(now.withHour(time).withMinute(0).withSecond(0).withNano(0).atZone(ZoneOffset.systemDefault()).toInstant()), DateUnit.SECOND);
+                    between(Date.from(now
+                            .withHour(time)
+                            .withMinute(0)
+                            .withSecond(0)
+                            .withNano(0)
+                            .atZone(ZoneOffset.systemDefault())
+                            .toInstant()), DateUnit.SECOND);
         }
         // 如果不小于, 则表示时间已经过了, 返回距离次日某点的秒差值
         return (DateUtil.endOfDay(new Date()).between(new Date(), DateUnit.SECOND) + (time * ONE_HOUR_SECOND_COUNT));
