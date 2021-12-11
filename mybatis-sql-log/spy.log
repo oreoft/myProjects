@@ -1,0 +1,1 @@
+1639207014838|16|statement|connection 0|url jdbc:p6spy:mysql://10.27.0.147:3306/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=false|SELECT   id,phone,gender   FROM t_user     WHERE gender = ? AND username LIKE ?|SELECT   id,phone,gender   FROM t_user     WHERE gender = 0 AND username LIKE '小%'

@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    # 请手动填入 split | mp | p6spy 来分别测试
+    active: split
+
+server:
+  port: 9999
+
+# 这里设置成你mysql的host
+mysql:
+  host: 10.27.0.147
