@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
  * @author oreoft
  */
 @Configuration
-public class DefaultMybatisPlusConfig {
+public class MybatisPlusSqlLogConfig {
 
 
     /**

@@ -24,8 +24,6 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <!-- 3.2以下版本的mp -->
             <version>3.1.2</version>
-            <!-- 3.2以上版本的mp -->
-<!--        <version>3.4.3</version>-->
         </dependency>
         <!-- 第三方的sql性能分析 -->
         <dependency>
