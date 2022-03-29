@@ -1,10 +1,14 @@
 package cn.someget.mixtools;
 
+import cn.hutool.core.convert.Convert;
 import cn.hutool.core.map.MapUtil;
+import cn.hutool.core.text.csv.CsvRow;
 import cn.someget.mixtools.collection.ListUtils;
 import cn.someget.mixtools.collection.MapUtils;
+import cn.someget.mixtools.file.ReaderUtils;
 import com.google.common.collect.Lists;
 import org.junit.jupiter.api.Test;
+import sun.util.resources.ga.LocaleNames_ga;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -37,8 +41,16 @@ public class MixToolsTest {
                 MapUtil.builder().put("name", "xiaohong").build(),
                 MapUtil.builder().put("name", "xiaoming").build());
         System.out.println(list.stream().filter(MapUtils.distinctByKey(e -> e.get("name"))).collect(Collectors.toList()));
-
     }
 
+
+    @Test
+    public void CSVTest() {
+        // 需要写入的 csv 文件路径
+        final String filePath = "/Users/oreoft/Downloads/_data_jmeter-log_cookieToken.30w.txt";
+        List<CsvRow> csvRows = ReaderUtils.readCsvFile(filePath);
+        List<Long> result = csvRows.stream().map(e -> Convert.toLong(e.get(0))).collect(Collectors.toList());
+        System.out.println(result);
+    }
 
 }
